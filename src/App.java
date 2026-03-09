@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 // Classe principal do sistema
-public class Main {
+public class App {
 
     public static void main(String[] args) {
 
         // Listas para armazenar livros e usuários
-        ArrayList<Livro> livros = new ArrayList<>();
+        ArrayList<Livros> livros = new ArrayList<>();
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
         int opcao;
@@ -72,7 +72,7 @@ public class Main {
                     );
 
                     if (numEmprestar > 0 && numEmprestar <= livros.size()) {
-                        Livro livro = livros.get(numEmprestar - 1);
+                        Livros livro = livros.get(numEmprestar - 1);
 
                         if (!livro.isEmprestado()) {
                             livro.emprestar();
@@ -102,7 +102,7 @@ public class Main {
                     );
 
                     if (numDevolver > 0 && numDevolver <= livros.size()) {
-                        Livro livro = livros.get(numDevolver - 1);
+                        Livros livro = livros.get(numDevolver - 1);
 
                         if (livro.isEmprestado()) {
                             livro.devolver();
@@ -120,7 +120,7 @@ public class Main {
                     String titulo = JOptionPane.showInputDialog("Digite o título do livro:");
                     String autor = JOptionPane.showInputDialog("Digite o autor do livro:");
 
-                    livros.add(new Livro(titulo, autor));
+                    livros.add(new Livros(titulo, autor));
                     JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
                     break;
 

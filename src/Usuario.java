@@ -21,8 +21,8 @@ public String getCpf() {
 
 //Mostra as informações do usuário
 @Override
-public String toString(
-  return "Nome:" + nome + "\nCPF:" + cpf;
-)
+public String toString(){
+   return "Nome: " + nome + "\nCPF: " + cpf;
+}
 
 }
